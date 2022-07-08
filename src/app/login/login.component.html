@@ -1,0 +1,102 @@
+<div class="d-flex">
+  <!-- screens biggers -->
+  <div class="col-8  d-none d-sm-block">
+  <img class="side-img img-fluid" src="../../assets/images/login/image 9.jpg" alt="">
+  </div>
+  <div class="col-4 side-form d-none d-sm-block">
+
+    <!-- login Form -->
+    <form class="formulario container fadeIn " [formGroup]="loginForm" *ngIf="login == 1">
+      <h3 class="text-center login">TechIn</h3>
+      <div class="input-group enter">
+        <input type="text" class="form-control imp" placeholder="Email" formControlName="email">
+        <div class="input-group-append">
+          <span class="input-group-text t">
+            <i class="bi bi-person"></i>
+          </span>
+        </div>
+      </div>
+      <div class="input-group">
+        <input type="password" class="form-control imp" placeholder="Senha" formControlName="password">
+        <div class="input-group-append">
+          <span class="input-group-text t">
+            <i class="bi bi-eye"></i>
+          </span>
+        </div>
+      </div>
+      <button class="login-button" (click)="logIn()"> Login</button>
+      <div class="text-center mt-4 d-flex-sm row">
+          <a href="#" class="forgot-password p-4 p-md-2 p-sm">Esqueci Minha Senha</a>
+          <a class="forgot-password " (click)="createUser()">Cadastre-se</a>
+      </div>
+    </form>
+
+    <!-- Create User Form -->
+    <form class="formulario2 container fadeIn" [formGroup]="createForm" *ngIf="login == 2">
+      <h3 class="text-center login">TechIn</h3>
+      <div class="input-group enter">
+        <input type="text" class="form-control imp" placeholder="Usuário" formControlName="name">
+        <div class="input-group-append">
+          <span class="input-group-text t">
+            <i class="bi bi-person"></i>
+          </span>
+        </div>
+      </div>
+      <div class="input-group enter">
+        <input type="text" class="form-control imp" placeholder="Email" formControlName="email">
+        <div class="input-group-append">
+          <span class="input-group-text t">
+            <i class="bi bi-envelope"></i>
+          </span>
+        </div>
+      </div>
+      <div class="input-group enter">
+        <input type="password" class="form-control imp" placeholder="Senha" formControlName="password">
+        <div class="input-group-append">
+          <span class="input-group-text t">
+            <i class="bi bi-eye"></i>
+          </span>
+        </div>
+      </div>
+      <div class="input-group enter">
+        <input type="password" class="form-control imp" placeholder="Confirmar Senha" formControlName="confirmpassword">
+        <div class="input-group-append">
+          <span class="input-group-text t">
+            <i class="bi bi-eye"></i>
+          </span>
+        </div>
+      </div>
+      <button class="login-button" (click)="register()"> Cadastrar</button>
+      <div class=" text-center mt-4">
+        <div class="text-center">
+          <a  class="forgot-password" (click)="loginUser()">Ja tem Cadastro? Acesse</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- smallest screens -->
+  <div class="d-block d-sm-none container phone">
+    <form class="phone-form fadeIn">
+      <h3 class="text-center login-text">TechIn</h3>
+      <div class="input-group enter">
+        <input type="text" class="form-control phone-imp" placeholder="Usuário">
+        <div class="input-group-append">
+          <span class="input-group-text phone-t">
+            <i class="bi bi-person"></i>
+          </span>
+        </div>
+      </div>
+      <div class="input-group">
+        <input type="password" class="form-control phone-imp" placeholder="Senha">
+        <div class="input-group-append">
+          <span class="input-group-text phone-t">
+            <i class="bi bi-eye"></i>
+          </span>
+        </div>
+      </div>
+      <button class="phone-login-button"> Login</button>
+    </form>
+  </div>
+</div>
