@@ -9,7 +9,7 @@
     <form class="formulario container fadeIn " [formGroup]="loginForm" *ngIf="login == 1">
       <h3 class="text-center login">TechIn</h3>
       <div class="input-group enter">
-        <input type="text" class="form-control imp" placeholder="Email" formControlName="email">
+        <input type="text" class="form-control imp" placeholder="Email" formControlName="email" required>
         <div class="input-group-append">
           <span class="input-group-text t">
             <i class="bi bi-person"></i>
@@ -17,14 +17,14 @@
         </div>
       </div>
       <div class="input-group">
-        <input type="password" class="form-control imp" placeholder="Senha" formControlName="password">
+        <input type="password" class="form-control imp" placeholder="Senha" formControlName="password" required>
         <div class="input-group-append">
           <span class="input-group-text t">
             <i class="bi bi-eye"></i>
           </span>
         </div>
       </div>
-      <button class="login-button" (click)="logIn()"> Login</button>
+      <button class="login-button" [disabled]="loginForm.invalid" (click)="logIn()"> Login</button>
       <div class="text-center mt-4 d-flex-sm row">
           <a href="#" class="forgot-password p-4 p-md-2 p-sm">Esqueci Minha Senha</a>
           <a class="forgot-password " (click)="createUser()">Cadastre-se</a>

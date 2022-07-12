@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
   }
   register(){
     this.userService.userRegister(this.createForm.value).subscribe((res)=>{
-      alert('Usuário criado com sucesso!');
+      this.authService.showMessage('Usuário criado com sucesso!');
       console.log(res);
     })
 
