@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HeaderComponent } from './views/header/header.component';
 import { FooterComponent } from './views/footer/footer.component';
+import { LoaderComponent } from './core/loader/loader/loader.component';
+import { ReqloaderInterceptor } from './core/loader/reqloader.interceptor';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { FooterComponent } from './views/footer/footer.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,12 @@ import { FooterComponent } from './views/footer/footer.component';
     MatSnackBarModule,
     BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: ReqloaderInterceptor,
+    multi: true
+  }],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
