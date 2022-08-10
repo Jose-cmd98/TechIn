@@ -8,3 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 }
+// add initializer that will fetch data depends on url
